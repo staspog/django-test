@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %}
+    {% static "css/main.css" %}
+{% endblock style %}
+{% block content %}
+<h2 class="latest-questions">Последние вопросы</h2>
+<div class="question-block">
+    <a href="#" class="question-link">Вопрос 1</a>
+    <p class="question-text">Как дела?</p>
+    <p class="question-comment">Комментарий к вопросу или часть текста вопроса.</p>
+    <a href="#" class="answers-link">Посмотреть ответы</a>
+</div>
+<div class="question-block">
+    <a href="#" class="question-link">Вопрос 2</a>
+    <p class="question-text">Как дела?</p>
+    <p class="question-comment">Комментарий к вопросу или часть текста вопроса.</p>
+    <a href="#" class="answers-link">Посмотреть ответы</a>
+</div>
+<div class="question-block">
+    <a href="#" class="question-link">Вопрос 3</a>
+    <p class="question-text">Как дела?</p>
+    <p class="question-comment">Комментарий к вопросу или часть текста вопроса.</p>
+    <a href="#" class="answers-link">Посмотреть ответы</a>
+</div>
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вопроском</title>
+    <link rel="stylesheet" href="{% block style %}{% endblock style %}"/>
+</head>
+<body>
+    <div class="header">
+        <div class="logo" >Вопроском</div>
+        <div class="search">
+            <input type="text" placeholder="Поиск...">
+        </div>
+        <a class="ask-button" href = "{% url "new_question" %}">ASK</a>
+        <div class="user">
+            <img src="{% static "img/avatar.jpeg" %}" alt="Аватар пользователя" class="avatar">
+            <div class="user-links">
+                <a href="#">Настройки</a>
+                <button class="logout-button">Выйти</button>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

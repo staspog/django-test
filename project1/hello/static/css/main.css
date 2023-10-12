@@ -1,0 +1,101 @@
+
+/* Стили для шапки сайта */
+.header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+.search {
+    flex-grow: 1;
+    margin: 0 20px;
+}
+.search input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+}
+.ask-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.ask-button:hover{
+    background-color: green;
+}
+.user {
+    display: flex;
+    align-items: center;
+}
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.user-links {
+    text-align: right;
+    margin-top: 5px;
+}
+.user-links a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+}
+.logout-button {
+    background-color: #d9534f;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Стили для основного содержания страницы */
+.content {
+    margin: 20px;
+}
+.latest-questions {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.question-block {
+    width: 66.66%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.question-link {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+.question-text {
+    margin-top: 10px;
+    font-size: 16px;
+}
+.question-comment {
+    font-style: italic;
+    color: #888;
+}
+.answers-link {
+    margin-top: 10px;
+    display: inline-block;
+    text-decoration: none;
+    color: #007bff;
+}

@@ -1,7 +1,7 @@
 from django.urls import path
-from hello.views import index, about
+from hello.views import main, new_question
 
 urlpatterns = [
-        path('', index, name = 'home'),
-        path('about/', about, name = 'about')
+        path('', main, name = 'main'),
+        path('new_question', new_question, name = 'new_question')
 ]
