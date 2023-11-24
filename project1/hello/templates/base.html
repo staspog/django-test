@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вопроском</title>
     <link rel="stylesheet" href="{% block style %}{% endblock style %}"/>
+    <link rel="stylesheet" href="{% static "css/base.css" %}"/>
 </head>
 <body>
     <div class="header">
-        <div class="logo" >Вопроском</div>
+        <a class="logo" href="/hello">Вопроском</a>
         <div class="search">
-            <input type="text" placeholder="Поиск...">
+            {% comment %} {{search_form}} {% endcomment %}
         </div>
         <a class="ask-button" href = "{% url "new_question" %}">ASK</a>
         <div class="user">

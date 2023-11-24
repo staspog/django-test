@@ -1,134 +1,22 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вопроском - Новый вопрос</title>
-    <style>
-        /* Стили для шапки сайта */
-        .header {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        .search {
-            flex-grow: 1;
-            margin: 0 20px;
-        }
-        .search input[type="text"] {
-            width: 100%;
-            padding: 5px;
-            border: none;
-            border-radius: 3px;
-        }
-        .ask-button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-        .user {
-            display: flex;
-            align-items: center;
-        }
-        .avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-        .user-links {
-            text-align: right;
-            margin-top: 5px;
-        }
-        .user-links a {
-            color: white;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 5px;
-        }
-        .logout-button {
-            background-color: #d9534f;
-            color: white;
-            padding: 5px 10px;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-
-        /* Стили для основного содержания страницы */
-        .content {
-            margin: 20px;
-        }
-        .new-question-title {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-        .form-group {
-            display: flex;
-            margin-bottom: 20px;
-        }
-        .form-group label {
-            width: 20%;
-            margin-right: 10px;
-            font-weight: bold;
-        }
-        .form-group input[type="text"],
-        .form-group textarea {
-            width: 70%;
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
-        .ask-button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="header">
-        <a class="logo" href = "{% url "main" %}" >Вопроском</a>
-        <div class="search">
-            <input type="text" placeholder="Поиск...">
-        </div>
-        <button class="ask-button">ASK</button>
-        <div class="user">
-            <img src="{% static "img/avatar.jpeg" %}" alt="Аватар пользователя" class="avatar">
-            <div class="user-links">
-                <a href="#">Настройки</a>
-                <button class="logout-button">Выйти</button>
-            </div>
-        </div>
-    </div>
-    <div class="content">
-        <h2 class="new-question-title">Новый вопрос</h2>
-        <form action="#" method="post">
-            <div class="form-group">
-                <label for="title">Заголовок:</label>
-                <input type="text" id="title" name="title" maxlength="60" required>
-            </div>
-            <div class="form-group">
-                <label for="text">Текст/Комментарий:</label>
-                <textarea id="text" name="text" rows="5" maxlength="250" required></textarea>
-            </div>
-            <button class="ask-button">ASK</button>
-        </form>
-    </div>
-</body>
-</html>
+{% block style %}
+    {% static "css/new_question.css" %}
+{% endblock style %}
+{% load static %}
+{% block  content%}
+<h2 class="new-question-title">Новый вопрос</h2>
+<form action="{% url "new_question" %}" method="post">
+    {% csrf_token %}
+    {{form}}
+    {% comment %} <div class="form-group">
+        <label for="title">Заголовок:</label>
+        <input type="text" id="title" name="title" maxlength="60" required>
+    </div> {% endcomment %}
+    {% comment %} <div class="form-group">
+        <label for="text">Текст/Комментарий:</label>
+        <textarea id="text" name="text" rows="5" maxlength="250" required></textarea>
+    </div> {% endcomment %}
+    <button class="ask-button" type="submit">ASK</button>
+</form>
+{% endblock %}
